@@ -19,7 +19,6 @@ import {
   Cell as C,
   Line as L
 } from 'recharts';
-import { ComponentType } from 'react';
 
 // Cast to bypass JSX incompatibility
 const ResponsiveContainer = RC as unknown as ComponentType<any>;
