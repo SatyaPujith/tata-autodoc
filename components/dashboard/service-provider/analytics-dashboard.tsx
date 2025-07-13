@@ -1,19 +1,31 @@
 'use client';
 
-'use client';
 
 import { useState, useEffect, ComponentType } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  PieChart, Pie, Cell, LineChart, Line,
-  ResponsiveContainer as RCOriginal
+  ResponsiveContainer as RCOriginal,
+  BarChart as BCOriginal,
+  PieChart as PCOriginal,
+  LineChart as LCOriginal,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Pie,
+  Cell,
+  Line
 } from 'recharts';
 import { TrendingUp, AlertTriangle, Wrench, Car, Users, Clock } from 'lucide-react';
 
+// 🛠 Cast components for JSX compatibility with TypeScript
 const ResponsiveContainer = RCOriginal as unknown as ComponentType<any>;
+const BarChart = BCOriginal as unknown as ComponentType<any>;
+const PieChart = PCOriginal as unknown as ComponentType<any>;
+const LineChart = LCOriginal as unknown as ComponentType<any>;
 
 interface Issue {
   _id: string;
@@ -64,6 +76,9 @@ interface AnalyticsData {
     percentage: number;
   }>;
 }
+
+
+
 
 
 export default function AnalyticsDashboard() {
